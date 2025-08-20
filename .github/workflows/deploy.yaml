@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v4.3.3
         with:
           name: deploy-files
-          path: ${{github.run_id}}.zip
+          path: deploy.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -37,4 +37,4 @@ jobs:
         existing_bucket_name: elasticbeanstalk-eu-west-1-831986041050
         region: eu-west-1
         version_label: ${{ github.sha }}
-        deployment_package: "deploy-files/${{github.run_id}}.zip"
+        deployment_package: "deploy-files/deploy.zip"
